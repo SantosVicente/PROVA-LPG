@@ -1,8 +1,11 @@
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Person teste = new Person("Jorge", "190.245.234-23", "jorge@gmail.com", "people.txt");
+        List<Person> people = new ArrayList<Person>();
+        people.add(new Person("Jorge", "190.245.234-23", "jorge@gmail.com", "people.txt"));
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("people.txt"));
@@ -31,11 +34,11 @@ public class App {
             }
         }
 
-        teste.create();
-        System.out.println(teste.readAll());
-        System.out.println(teste.read("190.245.234-23", 1));
-        System.out.println(teste.update("190.245.234-23", "Jorge,190.245.234-23,jorge2@gmail.com;", 1));
-        System.out.println(teste.readAll());
-        System.out.println(teste.delete("190.245.234-23", 1));
+        people.get(0).create();
+        System.out.println(people.get(0).readAll());
+        System.out.println(people.get(0).read("190.245.234-23", 1));
+        System.out.println(people.get(0).update("190.245.234-23", "Jorge,190.245.234-23,jorge2@gmail.com;", 1));
+        System.out.println(people.get(0).readAll());
+        System.out.println(people.get(0).delete("190.245.234-23", 1));
     }
 }

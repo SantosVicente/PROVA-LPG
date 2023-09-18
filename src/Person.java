@@ -50,11 +50,31 @@ public class Person extends CRUDFile {
   }
 
   public String readAll() {
-    return super.readAll();
+    String data = super.readAll();
+    String[] parts = data.split(";");
+    String result = "";
+
+    for (String part : parts) {
+      String[] values = part.split(",");
+      if (values.length > 0) {
+        result += "Nome: " + values[0] + "\nCPF: " + values[1] + "\nEmail: " + values[2] + "\n\n";
+      }
+    }
+    return result;
   }
 
   public String read(String identifier, int index) {
-    return super.read(identifier, index);
+    String data = super.read(identifier, index);
+
+    if (data == null) {
+      return null;
+    }
+
+    String[] parts = data.split(";");
+    String[] values = parts[0].split(",");
+
+    return "Nome: " + values[0] + "\nCPF: " + values[1] + "\nEmail: " + values[2];
+
   }
 
   public boolean update(String identifier, String newData, int index) {

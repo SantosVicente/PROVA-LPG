@@ -114,10 +114,6 @@ public class CRUDFile {
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
           String[] newValues = newFileData.split(";");
           for (int i = 0; i < newValues.length; i++) {
-            if (newValues.length - 1 == i) {
-              bufferedWriter.write(newValues[i]);
-              break;
-            }
             bufferedWriter.write(newValues[i] + ";");
             bufferedWriter.newLine();
           }

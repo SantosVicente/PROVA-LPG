@@ -6,6 +6,9 @@ public class App {
     public static void main(String[] args) throws Exception {
         List<Person> people = new ArrayList<Person>();
         people.add(new Person("Jorge", "190.245.234-23", "jorge@gmail.com", "people.txt"));
+        people.add(new Person("Jorge2", "190.245.234-24", "jorge2@gmail.com", "people.txt"));
+        people.add(new Person("Jorge3", "190.245.234-25", "jorge3@gmail.com", "people.txt"));
+        people.add(new Person("Jorge4", "190.245.234-26", "jorge4@gmail.com", "people.txt"));
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("people.txt"));
@@ -35,6 +38,9 @@ public class App {
         }
 
         people.get(0).create();
+        people.get(1).create();
+        people.get(2).create();
+        people.get(3).create();
         System.out.println(people.get(0).readAll());
         System.out.println(people.get(0).read("190.245.234-23", 1));
         System.out.println(people.get(0).update("190.245.234-23", "Jorge,190.245.234-23,jorge2@gmail.com;", 1));

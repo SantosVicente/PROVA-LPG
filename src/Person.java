@@ -1,51 +1,43 @@
 public class Person extends CRUDFile {
   private String name;
-  private String cpf;
-  private String email;
+  private String desc;
 
-  public Person(String name, String cpf, String email, String fileName) {
+  public Person(String name, String desc, String fileName) {
     super(fileName);
     this.name = name;
-    this.cpf = cpf;
-    this.email = email;
+    this.desc = desc;
   }
 
-  // getters and setters
+  public Person(String fileName) {
+    super(fileName);
+  }
 
   public String getName() {
     return name;
-  }
-
-  public String getCpf() {
-    return cpf;
-  }
-
-  public String getEmail() {
-    return email;
   }
 
   public void setName(String name) {
     this.name = name;
   }
 
-  public void setCpf(String cpf) {
-    this.cpf = cpf;
+  public String getDescription() {
+    return desc;
   }
 
-  public void setEmail(String email) {
-    this.email = email;
+  public void setDescription(String desc) {
+    this.desc = desc;
   }
 
   // deve retornar uma string com os dados da pessoa
   @Override
   public String toString() {
-    return "Nome: " + this.name + "\nCPF: " + this.cpf + "\nEmail: " + this.email;
+    return "Nome: " + this.name + "\nDesc: " + this.desc + "\n";
   }
 
   // methods CRUD
 
   public void create() {
-    String data = this.name + "," + this.cpf + "," + this.email + ";";
+    String data = this.name + "," + this.desc + ";";
     super.create(data);
   }
 

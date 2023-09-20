@@ -1,0 +1,37 @@
+// como selecionar um dado de arraylist pelo index
+
+for (int i = 0; i < ArrayList.size(); i++) {
+    System.out.println((i + 1) + " - " + ArrayList.get(i).getName() + "\n"); //getName é o getter
+}
+
+System.out.print("Digite o número correspondente: ");
+int index = Integer.parseInt(input.nextLine());
+
+while (index < 1 || index > ArrayList.size()) {
+    System.out.print("Digite um número válido: ");
+    index = Integer.parseInt(input.nextLine());
+}
+
+Aux.setName(ArrayList.get(index - 1).getName());
+
+// metodos importantes:
+.isEmpty() // retorna true se o arraylist estiver vazio
+
+// como remover um dado de arraylist pelo nome
+for (Tools aux : ArrayList) {
+  if (aux.getName().equals(auxString)) {
+    ArrayList.remove(aux);
+    break;
+  }
+}
+
+auxChar = input.nextLine().charAt(0); // como ler um char
+
+// Editando na lista:
+for (Class aux : ArrayList) {
+    if (aux.getName().equals(auxString)) {
+        aux.setName(value);
+        aux.setDescription(value);
+        break;
+    }
+}
